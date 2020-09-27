@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': os.getenv('FILMS_BASE'),
         'USER': os.getenv('BASE_USER'),
         'PASSWORD': os.getenv('BASE_PASS'),
-        'HOST': '127.0.0.1',
+        'HOST': os.getenv('BASE_HOST'),
         'PORT': '5432',
     }
 }
