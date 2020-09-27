@@ -17,6 +17,9 @@ class Actors(models.Model):
         verbose_name = 'actor'
         verbose_name_plural = 'actors'
 
+    def __str__(self):
+        return self.actor
+
 
 class Countries(models.Model):
     country = models.CharField(unique=True, max_length=50)
@@ -39,6 +42,9 @@ class Directors(models.Model):
         db_table = 'directors'
         verbose_name = 'director'
         verbose_name_plural = 'directors'
+
+    def __str__(self):
+        return self.director
 
 
 class Films(models.Model):
@@ -103,6 +109,9 @@ class Genres(models.Model):
         verbose_name = 'genre'
         verbose_name_plural = 'genres'
 
+    def __str__(self):
+        return self.genre
+
 
 class Types(models.Model):
     type = models.TextField()  # This field type is a guess.
@@ -114,6 +123,9 @@ class Types(models.Model):
         verbose_name = 'type'
         verbose_name_plural = 'types'
 
+    def __str__(self):
+        return self.type
+
 
 class Years(models.Model):
     year = models.CharField(unique=True, max_length=10)
@@ -123,3 +135,6 @@ class Years(models.Model):
         db_table = 'years'
         verbose_name = 'year'
         verbose_name_plural = 'years'
+
+    def __str__(self):
+        return self.year
