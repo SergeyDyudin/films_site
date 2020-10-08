@@ -11,7 +11,9 @@ header{
     width: 100%;
     background-color: #333030;
     color: #f0f8ff;
+    font-weight: bold;
     border: 0;
+    justify-content: space-between;
 }
 
 .site_title{
@@ -31,8 +33,53 @@ header{
 
 }
 
+/* Navigation menu */
+
+.navigation{
+    float: right;
+    margin-right: 10%;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
 .header_btn{
     width: 60px;
     height: 40px;
-    margin: 10px 20px;   
+    margin: 10px 20px;
+    
+    color: aliceblue;
+    text-decoration: none;
+    
+    transition: color 0.2s linear;
+    position: relative;
+    
 }
+
+.header_btn:hover{
+    color: #f0b33e
+}
+
+.header_btn:after{
+    content: "";
+    width: 100%;
+    top: 100%;
+    height: 3px;
+    background-color: #f0b33e;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    transition: opacity 0.1s linear;
+    
+}
+
+.header_btn:hover:after{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
