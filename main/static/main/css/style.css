@@ -100,6 +100,17 @@ header{
 
 
 
+/* Page About.html */
 
+.text_about{
+    margin-top:18%;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+}
 
+a.text_about:visited{
+    color: #333030;
+}
 
