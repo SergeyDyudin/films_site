@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    
+/* Header */
+}
+header{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color: #333030;
+    color: #f0f8ff;
+    border: 0;
+}
+
+.site_title{
+    text-align: center;
+    font-size: 35px;
+    
+    width: 250px;
+    padding: 10px;
+}
+
+.logo{
+    width: 45px;
+    height: 45px;
+    margin: auto 0;
+    z-index: 1;
+    filter: invert(100%) sepia(52%) saturate(6394%) hue-rotate(178deg) brightness(110%) contrast(105%);
+
+}
+
+.header_btn{
+    width: 60px;
+    height: 40px;
+    margin: 10px 20px;   
+}
