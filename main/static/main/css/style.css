@@ -2,6 +2,8 @@ body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+/*    background-color: #333030;*/
+/*    color: #f0f8ff;*/
     
 /* Header */
 }
@@ -42,12 +44,12 @@ header{
     padding-top: 20px;
 }
 
-.header_btn{
+.nav_link{
     width: 60px;
     height: 40px;
     margin: 10px 20px;
     
-    color: aliceblue;
+    color: #f0f8ff;
     text-decoration: none;
     
     transition: color 0.2s linear;
@@ -55,11 +57,11 @@ header{
     
 }
 
-.header_btn:hover{
+.nav_link:hover{
     color: #f0b33e
 }
 
-.header_btn:after{
+.nav_link:after{
     content: "";
     width: 100%;
     top: 100%;
@@ -68,15 +70,33 @@ header{
     position: absolute;
     opacity: 0;
     left: 0;
-    transition: opacity 0.1s linear;
+    transition: opacity 0.3s linear;
     
 }
 
-.header_btn:hover:after{
+.nav_link:hover:after{
     opacity: 1;
 }
 
 
+/* Button */
+.header_btn{
+    border: 3px solid transparent; 
+    border-radius: .25rem; 
+    border-color: #f0f8ff; 
+    padding: .375rem .75rem;
+        
+    transition: border-color 0.3s linear;
+}
+
+.header_btn:hover{
+    border-radius: .30rem;
+    border-color: #f0b33e;
+}
+
+.header_btn:after{
+    all: initial;
+}
 
 
 
