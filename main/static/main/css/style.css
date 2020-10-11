@@ -21,9 +21,14 @@ header{
 .site_title{
     text-align: center;
     font-size: 35px;
+    text-decoration: none;
     
     width: 250px;
     padding: 10px;
+}
+
+.site_title:visited{
+    color: #f0f8ff;
 }
 
 .logo{
