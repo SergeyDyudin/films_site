@@ -18,6 +18,7 @@ header{
     justify-content: space-between;
 }
 
+
 .site_title{
     text-align: center;
     font-size: 35px;
@@ -119,4 +120,14 @@ header{
 a.text_about:visited{
     color: #333030;
 }
+
+/* Page Contacts.html */
+
+.contacts_text{
+    text-decoration: none;
+    color: #333030;
+}
+    
+
+
 
