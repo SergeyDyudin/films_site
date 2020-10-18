@@ -12,3 +12,7 @@ def about(request):
 
 def contacts(request):
     return render(request, 'main/contacts.html')
+
+
+def sign_in(request):
+    return render(request, 'main/sign_in.html')
