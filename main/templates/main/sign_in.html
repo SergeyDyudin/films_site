@@ -5,20 +5,14 @@ Sign In
 {% endblock %}
 
 {% block body%}
-    <section class="contacts_content">
+    <section class="auth_block">
        <form action="" method="post">
-          <table align="center">
-            <tr align="left">
-                <td><label for="user_login">Login</label></td>
-                <td><input type="text" maxlength="20" name="user_login"
-                       id="user_login"></td>
-            </tr>
-            <tr>
-                <td><label for="user_password">Password </label></td>
-                <td><input type="password" maxlength="20" name="user_password"
-                       id="user_password"></td>
-            </tr>
-          </table>
+           <label for="user_login">Login</label>
+           <input type="text" placeholder="Enter login" maxlength="20" name="user_login"
+                   id="user_login">
+           <label for="user_password">Password </label>
+           <input type="password" placeholder="Enter password" maxlength="20" name="user_password"
+                   id="user_password">
         </form>
     </section>
 {% endblock %}
