@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from .models import Films
 
 
 def home(request):
@@ -16,3 +17,8 @@ def contacts(request):
 
 def sign_in(request):
     return render(request, 'main/sign_in.html')
+
+
+def films(request):
+    films_list = Films.objects.all()[:20]
+    return render(request, 'main/films.html', {'films_list': films_list})

@@ -63,6 +63,8 @@ class Films(models.Model):
         verbose_name = 'film'
         verbose_name_plural = 'films'
 
+    def __str__(self):
+        return self.name
 
 class FilmsActors(models.Model):
     film = models.OneToOneField(Films, models.DO_NOTHING, primary_key=True)
@@ -124,7 +126,7 @@ class Types(models.Model):
         verbose_name_plural = 'types'
 
     def __str__(self):
-        return self.type
+        return self.type + " " + str(self.season)
 
 
 class Years(models.Model):
