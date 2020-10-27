@@ -22,3 +22,8 @@ def sign_in(request):
 def films(request):
     films_list = Films.objects.all()[:20]
     return render(request, 'main/films.html', {'films_list': films_list})
+
+
+def film(request, film_id):
+    films_data = Films.objects.get(id=film_id)
+    return render(request, 'main/film.html', {'films_list': films_data})
