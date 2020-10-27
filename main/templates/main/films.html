@@ -9,9 +9,9 @@ List of films
         <ul>
         {% for film in films_list %}
             {% if film.id_type.season %}
-                <li><a href="https://www.kinopoisk.ru/serial/{{ film.kinopoisk_id }}/">{{ film.name }}</a></li>
+                <li><a href="https://www.kinopoisk.ru/serial/{{ film.kinopoisk_id }}/" target="_blank">{{ film.name }}</a></li>
             {% else %}
-                <li><a href="https://www.kinopoisk.ru/film/{{ film.kinopoisk_id }}/">{{ film.name }}</a></li>
+                <li><a href="https://www.kinopoisk.ru/film/{{ film.kinopoisk_id }}/" target="_blank">{{ film.name }}</a></li>
             {% endif %}
     <!--        <li><a href="/films/{{ films.id }}/">{{ film.name }}</a></li>-->
         {% endfor %}

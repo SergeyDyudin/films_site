@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from .models import Films
+from django.forms.models import model_to_dict
+# import pdb
 
+
+# pdb.set_trace()
 
 def home(request):
     return render(request, 'main/index.html')
@@ -25,5 +29,6 @@ def films(request):
 
 
 def film(request, film_id):
-    films_data = Films.objects.get(id=film_id)
-    return render(request, 'main/film.html', {'films_list': films_data})
+    film_data = Films.objects.get(id=film_id)
+    film_data = model_to_dict(film_data)
+    return render(request, 'main/film.html', {'film_data': film_data})

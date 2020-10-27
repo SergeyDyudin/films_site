@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body%}
-    {{ films_list }}
+    {{ film_data.values }}
+    <ul>
+    {% for k, v in film_data.items %}
+        <li>{{ k }} - {{ v }}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}
 
