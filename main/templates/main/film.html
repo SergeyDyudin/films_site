@@ -5,11 +5,8 @@
 {% endblock %}
 
 {% block body%}
-    {{ film_data.items }}
-    <ul>
-    {% for k, v in film_data.items %}
-        <li>{{ k }} - {{ v }}</li>
-    {% endfor %}
-    </ul>
+    {{ film_data.id_genres }}
+    <p>{% lorem 2 p%}
+        {% now "jS F Y"%}
 {% endblock %}
 

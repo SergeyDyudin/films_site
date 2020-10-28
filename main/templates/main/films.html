@@ -6,7 +6,7 @@ List of films
 
 {% block body%}
     {% if films_list %}
-        <ul>
+        <ol>
         {% for film in films_list %}
             {% if film.id_type.season %}
                 <li><a href="https://www.kinopoisk.ru/serial/{{ film.kinopoisk_id }}/" target="_blank">{{ film.name }}</a></li>
@@ -15,7 +15,7 @@ List of films
             {% endif %}
     <!--        <li><a href="/films/{{ films.id }}/">{{ film.name }}</a></li>-->
         {% endfor %}
-    </ul>
+        </ol>
     {% else %}
     <   p>No films are available.</p>
 {% endif %}
