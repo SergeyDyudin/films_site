@@ -13,11 +13,11 @@
         <a class="site_title" href="/">VideoArchive</a>
         <nav class="navigation">
             <a class="nav_link" href="/">Главная</a>
-            <a class="nav_link" href="/films">Films</a>
+            <a class="nav_link" href="{% url 'films' %}">Films</a>
             <a class="nav_link" href="https://www.apgyugrusi.ru/ref/Телефоны.xls">Справочник</a>
-            <a class="nav_link" href="/contacts">Contacts</a>
-            <a class="nav_link" href="/about">About</a>
-            <a class="header_btn nav_link" href="/sign-in">Sign in</a>
+            <a class="nav_link" href="{% url 'contacts' %}">Contacts</a>
+            <a class="nav_link" href="{% url 'about' %}">About</a>
+            <a class="header_btn nav_link" href="{% url 'sign-in' %}">Sign in</a>
         </nav>
     </header>
     <main>

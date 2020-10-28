@@ -54,7 +54,8 @@ class Films(models.Model):
     kinopoisk = models.FloatField(blank=True, null=True)
     imdb = models.FloatField(blank=True, null=True)
     id_years = models.ForeignKey('Years', models.DO_NOTHING, db_column='id_years', blank=True, null=True)
-    id_genres = models.ForeignKey('Genres', models.DO_NOTHING, db_column='id_genres', blank=True, null=True)
+    id_genres = models.ForeignKey('Genres', models.DO_NOTHING, db_column='id_genres', blank=True, null=True,
+                                  verbose_name='Genre')
     id_types = models.ForeignKey('Types', models.DO_NOTHING, db_column='id_types', blank=True, null=True)
 
     class Meta:

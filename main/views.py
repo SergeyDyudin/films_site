@@ -1,11 +1,7 @@
-from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import Films
 from django.forms.models import model_to_dict
-# import pdb
 
-
-# pdb.set_trace()
 
 def home(request):
     return render(request, 'main/index.html')
@@ -29,6 +25,8 @@ def films(request):
 
 
 def film(request, film_id):
-    film_data = Films.objects.get(id=film_id)
+    film_data = get_object_or_404(Films, id=film_id)
+    film_genre = {'genre': film_data.id_genres}
     film_data = model_to_dict(film_data)
+    film_data.update(film_genre)
     return render(request, 'main/film.html', {'film_data': film_data})

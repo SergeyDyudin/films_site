@@ -1,11 +1,11 @@
 {% extends 'main/layout.html' %}
 
 {% block title%}
-Видеоархив
+{{ film_data.name }}
 {% endblock %}
 
 {% block body%}
-    {{ film_data.values }}
+    {{ film_data.items }}
     <ul>
     {% for k, v in film_data.items %}
         <li>{{ k }} - {{ v }}</li>
