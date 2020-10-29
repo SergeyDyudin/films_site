@@ -6,6 +6,11 @@
 
 {% block body%}
     {{ film_data.id_genres }}
+    {% if film_data.id_type.season %}
+        <a href="https://www.kinopoisk.ru/serial/{{ film_data.kinopoisk_id }}/" target="_blank">{{ film_data.name }}</a>
+    {% else %}
+        <a href="https://www.kinopoisk.ru/film/{{ film_data.kinopoisk_id }}/" target="_blank">{{ film_data.name }}</a>
+    {% endif %}
     <p>{% lorem 2 p%}
         {% now "jS F Y"%}
 {% endblock %}
