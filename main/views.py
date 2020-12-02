@@ -20,7 +20,7 @@ def sign_in(request):
 
 
 def films(request):
-    films_list = Films.objects.all()[:20]
+    films_list = Films.objects.all()
     return render(request, 'main/films.html', {'films_list': films_list})
 
 
