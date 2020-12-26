@@ -1,4 +1,5 @@
 secret_key.py
 venv
 .idea
+.vscode
 .DS_store
