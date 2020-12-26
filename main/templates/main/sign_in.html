@@ -1,19 +1,19 @@
-{% extends 'main/layout.html' %}
-
-{% block title%}
-Sign In
-{% endblock %}
-
-{% block body%}
-    <section class="auth_block">
-       <form action="" method="post">
-           <label for="user_login">Login</label>
-           <input type="text" placeholder="Enter login" maxlength="20" name="user_login"
-                   id="user_login">
-           <label for="user_password">Password </label>
-           <input type="password" placeholder="Enter password" maxlength="20" name="user_password"
-                   id="user_password">
-        </form>
-    </section>
-{% endblock %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sergey Dyudin">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/sign_in.css' %}">
+    <title>Sign In</title>
+</head>
+<body>
+    <form class="box" action="index.html" method="post">
+        <h1>Login</h1>
+        <input type="text" name="" placeholder="Username">
+        <input type="password" name="" placeholder="Password">
+        <input type="submit" name="" value="Login">
+      </form>
+</body>
+</html>
