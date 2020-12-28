@@ -8,8 +8,10 @@ List of films
     {% if films_list %}
         <ol>
         {% for film in films_list %}
-            <li><a href="{% url 'film' film.id%}">{{ film.name }}</a></li>
-    <!--        <li><a href="/films/{{ films.id }}/">{{ film.name }}</a></li>-->
+            <li><a href="{% url 'film' film.id%}">{{ film.name }}
+                {% if film.id_types.season != None %}
+                    ({{ film.id_types.season }})
+                {% endif %} </a></li>
         {% endfor %}
         </ol>
     {% else %}
