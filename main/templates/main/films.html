@@ -21,14 +21,12 @@ List of films
 
 {% block body%}
     {% if page_obj %}
-        <ol>
         {% for film in page_obj %}
-            <li><a href="{% url 'film' film.id%}">{{ film.name }}
+                <p><a href="{% url 'film' film.id%}">{{ film.id }}. {{ film.name }}
                 {% if film.id_types.season != None %}
                     ({{ film.id_types.season }})
-                {% endif %} </a></li>
+                {% endif %} </a></p>
         {% endfor %}
-        </ol>
     {% else %}
         <p>No films are available.</p>
     {% endif %}
