@@ -4,10 +4,42 @@
 List of films
 {% endblock %}
 
+
+<!--    {% if films_list %}-->
+<!--        <ol>-->
+<!--        {% for film in films_list %}-->
+<!--            <li><a href="{% url 'film' film.id%}">{{ film.name }}-->
+<!--                {% if film.id_types.season != None %}-->
+<!--                    ({{ film.id_types.season }})-->
+<!--                {% endif %} </a></li>-->
+<!--        {% endfor %}-->
+<!--        </ol>-->
+<!--    {% else %}-->
+<!--        <p>No films are available.</p>-->
+<!--    {% endif %}-->
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
 {% block body%}
-    {% if films_list %}
+    {% if page_obj %}
         <ol>
-        {% for film in films_list %}
+        {% for film in page_obj %}
             <li><a href="{% url 'film' film.id%}">{{ film.name }}
                 {% if film.id_types.season != None %}
                     ({{ film.id_types.season }})
@@ -17,5 +49,22 @@ List of films
     {% else %}
         <p>No films are available.</p>
     {% endif %}
+    <div>
+    <span>
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 {% endblock %}
 

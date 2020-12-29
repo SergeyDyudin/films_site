@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Films
+from django.core.paginator import Paginator
 from django.forms.models import model_to_dict
 
 
@@ -21,7 +22,11 @@ def sign_in(request):
 
 def films(request):
     films_list = Films.objects.all()
-    return render(request, 'main/films.html', {'films_list': films_list})
+    paginator = Paginator(films_list, 30)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'main/films.html', {'page_obj': page_obj})
+    # return render(request, 'main/films.html', {'films_list': films_list})
 
 
 def film(request, film_id):
