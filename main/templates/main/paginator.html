@@ -1,0 +1,15 @@
+{% if  page_obj.has_previous %}
+    <a href="?page=1">&laquo; First</a>
+    <a class="Next" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for n in page_obj.paginator.page_range %}
+    {% if n > page_obj.number|add:-4 and n < page_obj.number|add:4 %}
+        <a href='?page={{ n }}'>{{ n }}</a>
+    {% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+    <a class="Next" href="?page={{ page_obj.next_page_number }}">Next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+{% endif %}
