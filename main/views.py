@@ -22,7 +22,7 @@ def sign_in(request):
 
 def films(request):
     films_list = Films.objects.all()
-    paginator = Paginator(films_list, 30)
+    paginator = Paginator(films_list, 28)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'main/films.html', {'page_obj': page_obj})

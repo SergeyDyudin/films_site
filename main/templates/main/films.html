@@ -4,33 +4,19 @@
 List of films
 {% endblock %}
 
-
-<!--    {% if films_list %}-->
-<!--        <ol>-->
-<!--        {% for film in films_list %}-->
-<!--            <li><a href="{% url 'film' film.id%}">{{ film.name }}-->
-<!--                {% if film.id_types.season != None %}-->
-<!--                    ({{ film.id_types.season }})-->
-<!--                {% endif %} </a></li>-->
-<!--        {% endfor %}-->
-<!--        </ol>-->
-<!--    {% else %}-->
-<!--        <p>No films are available.</p>-->
-<!--    {% endif %}-->
-
-
 {% block body%}
-    {% if page_obj %}
-        {% for film in page_obj %}
-                <p><a href="{% url 'film' film.id%}">{{ film.id }}. {{ film.name }}
-                {% if film.id_types.season != None %}
-                    ({{ film.id_types.season }})
-                {% endif %} </a></p>
-        {% endfor %}
-    {% else %}
-        <p>No films are available.</p>
-    {% endif %}
-
+    <div class="grid_container">
+        {% if page_obj %}
+            {% for film in page_obj %}
+                    <a class=films_elem href="{% url 'film' film.id%}">{{ film.id }}. {{ film.name }}
+                    {% if film.id_types.season != None %}
+                        ({{ film.id_types.season }})
+                    {% endif %} </a>
+            {% endfor %}
+        {% else %}
+            <p>No films are available.</p>
+        {% endif %}
+    </div>
     <!--Include paginator's template-->
     {% include 'main/paginator.html'%}
 {% endblock %}

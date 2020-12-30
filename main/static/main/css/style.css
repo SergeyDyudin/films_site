@@ -4,9 +4,10 @@ body{
     box-sizing: border-box;
 /*    background-color: #333030;*/
 /*    color: #f0f8ff;*/
-    
+}    
+
 /* Header */
-}
+
 header{
     display: flex;
     height: 60px;
@@ -20,7 +21,7 @@ header{
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 
@@ -111,15 +112,58 @@ header{
 
 
 /* Main part of page */
+
 main{
     margin-top:80px;
 }
 
+/* Grid output for films */
+.grid_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+
+    background: #191919;
+    box-shadow: 10px 10px 5px;
+}
+
+.grid_container > a.films_elem{
+    background-color: #333030;
+
+    color: #f0f8ff;
+    text-decoration: none;
+    
+    transition: color 0.2s linear;
+    position: relative;
+
+
+}
+
+.grid_container > a.films_elem:hover{
+    color: #f0b33e
+}
+
+.grid_container > a.films_elem:after{
+    content: "";
+    width: 100%;
+    top: 100%;
+    height: 3px;
+    background-color: #f0b33e;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    transition: opacity 0.3s linear;
+    
+}
+
+.grid_container > a.films_elem:hover:after{
+    opacity: 1;
+}
 
 /* Page About.html */
 
 .text_about{
-    margin-top:18%;
+    margin-top:25%;
     font-size: 30px;
     font-weight: 900;
     text-align: center;
