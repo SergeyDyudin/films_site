@@ -16,6 +16,11 @@ header{
     font-weight: bold;
     border: 0;
     justify-content: space-between;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
 }
 
 
@@ -104,6 +109,11 @@ header{
     all: initial;
 }
 
+
+/* Main part of page */
+main{
+    margin-top:80px;
+}
 
 
 /* Page About.html */
