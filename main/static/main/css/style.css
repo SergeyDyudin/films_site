@@ -21,7 +21,9 @@ header{
     position: fixed;
     left: 0;
     top: 0;
-    /* z-index: 1000; */
+    z-index: 1000;
+
+    box-shadow: 10px 10px 5px #191919;
 }
 
 
@@ -121,26 +123,29 @@ main{
 .grid_container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
+    grid-gap: 2em;
+    grid-auto-rows: minmax(10em, auto);
 
-    background: #191919;
-    box-shadow: 10px 10px 5px;
 }
 
 .grid_container > a.films_elem{
     background-color: #333030;
+    padding: 1em;
 
     color: #f0f8ff;
     text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
     
-    transition: color 0.2s linear;
+    transition: color 0.1s linear;
     position: relative;
 
-
+    box-shadow: 10px 10px 5px #191919;
 }
 
 .grid_container > a.films_elem:hover{
-    color: #f0b33e
+    color: #f0b33e;
+    box-shadow: 10px 10px 5px #f0b33e;
 }
 
 .grid_container > a.films_elem:after{

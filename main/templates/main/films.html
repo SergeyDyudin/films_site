@@ -8,7 +8,7 @@ List of films
     <div class="grid_container">
         {% if page_obj %}
             {% for film in page_obj %}
-                    <a class=films_elem href="{% url 'film' film.id%}">{{ film.id }}. {{ film.name }}
+                    <a class=films_elem href="{% url 'film' film.id%}"> {{ film.name }}
                     {% if film.id_types.season != None %}
                         ({{ film.id_types.season }})
                     {% endif %} </a>

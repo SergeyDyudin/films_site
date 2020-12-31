@@ -1,0 +1,27 @@
+.paginator{
+    /* margin-top: 5%; */
+    display: inline-block;
+    padding: 5%;
+    /* margin-bottom: 5%; */
+}
+
+.paginator a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.paginator a.active {
+    background-color: #f0b33e;
+    color: white;
+}
+
+.paginator a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.center {
+    text-align: center;
+}
