@@ -1,7 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Films
 from django.core.paginator import Paginator
 from django.forms.models import model_to_dict
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+from forms import LoginForm
+from .models import Films
+
 
 
 def home(request):
@@ -11,13 +17,21 @@ def home(request):
 def about(request):
     return render(request, 'main/about.html')
 
-
+@login_required
 def contacts(request):
     return render(request, 'main/contacts.html')
 
 
 def sign_in(request):
-    return render(request, 'main/sign_in.html')
+    if request.method == 'POST':
+        # Создаем экземпляр формы и заполняем данными из запроса (связывание, binding):
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect(reverse('home'))
+    else:
+        pass
+    return render(request, reverse('sign-in'))
+    # return render(request, 'main/sign_in.html')
 
 
 def films(request):
