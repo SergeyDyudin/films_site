@@ -13,13 +13,18 @@
     <header>
         <a class="site_title" href="/">VideoArchive</a>
         <nav class="navigation">
-            <a class="nav_link" href="/">Главная</a>
-            <a class="nav_link" href="{% url 'films' %}">Films</a>
-            <a class="nav_link" href="https://www.apgyugrusi.ru/ref/Телефоны.xls">Справочник</a>
-            <a class="nav_link" href="{% url 'contacts' %}">Contacts</a>
-            <a class="nav_link" href="{% url 'about' %}">About</a>
-            <a class="header_btn nav_link" href="{% url 'sign-in' %}">Sign in</a>
+            <a  href="/">Главная</a>
+            <a  href="{% url 'films' %}">Films</a>
+            <a  href="https://www.apgyugrusi.ru/ref/Телефоны.xls">Справочник</a>
+            <a  href="{% url 'contacts' %}">Contacts</a>
+            <a  href="{% url 'about' %}">About</a>
+<!--            <span> Hello, {{  request.user }}</span>-->
+
+<!--            <a class="header_btn nav_link" href="{% url 'sign-in' %}">Sign in</a>-->
         </nav>
+        <div class="navigation">                                 
+            <a class="header_btn" href="{% url 'log-out' %}">Logout</a>
+        </div>
     </header>
     <main>
         {% block body %}

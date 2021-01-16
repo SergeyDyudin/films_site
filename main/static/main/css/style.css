@@ -17,6 +17,7 @@ header{
     font-weight: bold;
     border: 0;
     justify-content: space-between;
+    overflow: auto;
 
     position: fixed;
     left: 0;
@@ -53,12 +54,12 @@ header{
 
 .navigation{
     float: right;
-    margin-right: 10%;
+    /* margin-right: 10%; */
     text-transform: uppercase;
     padding-top: 20px;
 }
 
-.nav_link{
+.navigation a{
     width: 60px;
     height: 40px;
     margin: 10px 20px;
@@ -71,11 +72,11 @@ header{
     
 }
 
-.nav_link:hover{
+.navigation a:hover{
     color: #f0b33e
 }
 
-.nav_link:after{
+.navigation a:after{
     content: "";
     width: 100%;
     top: 100%;
@@ -88,7 +89,7 @@ header{
     
 }
 
-.nav_link:hover:after{
+.navigation a:hover:after{
     opacity: 1;
 }
 

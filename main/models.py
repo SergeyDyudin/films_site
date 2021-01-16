@@ -57,6 +57,7 @@ class Films(models.Model):
     id_genres = models.ForeignKey('Genres', models.DO_NOTHING, db_column='id_genres', blank=True, null=True,
                                   verbose_name='Genre')
     id_types = models.ForeignKey('Types', models.DO_NOTHING, db_column='id_types', blank=True, null=True)
+    description = models.CharField(max_length=500)
 
     class Meta:
         managed = False
