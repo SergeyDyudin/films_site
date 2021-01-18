@@ -2,6 +2,7 @@ body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+/*    background: #34495e;*/
 /*    background-color: #333030;*/
 /*    color: #f0f8ff;*/
 }    
@@ -164,6 +165,36 @@ main{
 
 .grid_container > a.films_elem:hover:after{
     opacity: 1;
+}
+
+.film{
+    display: flex;
+}
+
+.text{
+    margin-left: 1em;
+    margin-top: 1em;
+    display: block;
+}
+
+.genre{
+    text-transform: lowercase;
+    font-size: 0.75em;
+}
+
+.icon{
+    width: 52px; 
+    height: 78px;
+    vspace: 1;
+    hspace: 1;
+
+}
+
+.imdb{
+    margin-top: 1em;
+    padding: auto;
+    
+    font-size: 0.65em;
 }
 
 /* Page About.html */

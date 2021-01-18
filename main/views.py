@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils.http import is_safe_url
+from django.conf import settings
 
 from .forms import LoginForm
 from .models import Films
@@ -38,8 +39,8 @@ def sign_in(request):
                 if user is not None:
                     login(request, user)
                     # return HttpResponseRedirect(reverse('home'))
-                    redirect_to = request.GET.get('next', '')
-                    if is_safe_url(url=redirect_to, allowed_hosts=request.get_host()):
+                    redirect_to = request.GET.get('next', '/')
+                    if is_safe_url(url=redirect_to, allowed_hosts=settings.ALLOWED_HOSTS):
                         return HttpResponseRedirect(redirect_to)
                 else:
                     messages.error(request, 'Username or password is incorrect')
@@ -54,7 +55,7 @@ def logout_user(request):
 
 @login_required
 def films(request):
-    films_list = Films.objects.all()
+    films_list = Films.objects.all().order_by('id')
     paginator = Paginator(films_list, 28)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
