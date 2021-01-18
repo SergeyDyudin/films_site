@@ -48,19 +48,22 @@ class Directors(models.Model):
 
 
 class Films(models.Model):
-    name = models.CharField(max_length=80)
-    time = models.CharField(max_length=20, blank=True, null=True)
-    kinopoisk_id = models.CharField(max_length=30, blank=True, null=True)
-    kinopoisk = models.FloatField(blank=True, null=True)
-    imdb = models.FloatField(blank=True, null=True)
-    id_years = models.ForeignKey('Years', models.DO_NOTHING, db_column='id_years', blank=True, null=True)
-    id_genres = models.ForeignKey('Genres', models.DO_NOTHING, db_column='id_genres', blank=True, null=True,
-                                  verbose_name='Genre')
-    id_types = models.ForeignKey('Types', models.DO_NOTHING, db_column='id_types', blank=True, null=True)
-    description = models.CharField(max_length=500)
+    name = models.CharField(verbose_name='Название', max_length=80)
+    time = models.CharField(verbose_name='Длительность', max_length=20, blank=True, null=True)
+    kinopoisk_id = models.CharField(verbose_name='Кинопоиск ID', max_length=30, blank=True, null=True)
+    kinopoisk = models.FloatField(verbose_name='Рейтинг Кинопоиск', blank=True, null=True)
+    imdb = models.FloatField(verbose_name='Рейтинг IMDB', blank=True, null=True)
+    id_years = models.ForeignKey('Years', models.DO_NOTHING, verbose_name='Год выхода', db_column='id_years',
+                                 blank=True, null=True)
+    id_genres = models.ForeignKey('Genres', models.DO_NOTHING, verbose_name='Жанр', db_column='id_genres',
+                                  blank=True, null=True)
+    id_types = models.ForeignKey('Types', models.DO_NOTHING, db_column='id_types', verbose_name='Тип (сезон)',
+                                 blank=True, null=True)
+    description = models.TextField(verbose_name='Описание', max_length=500, blank=True)
+    icon = models.ImageField(verbose_name='Иконка', upload_to='icons', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'films'
         verbose_name = 'film'
         verbose_name_plural = 'films'
@@ -118,7 +121,7 @@ class Genres(models.Model):
 
 
 class Types(models.Model):
-    type = models.TextField()  # This field type is a guess.
+    type = models.CharField(max_length=30)  # This field type is a guess.
     season = models.CharField(unique=True, max_length=30, blank=True, null=True)
 
     class Meta:
