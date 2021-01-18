@@ -60,7 +60,7 @@ class Films(models.Model):
     id_types = models.ForeignKey('Types', models.DO_NOTHING, db_column='id_types', verbose_name='Тип (сезон)',
                                  blank=True, null=True)
     description = models.TextField(verbose_name='Описание', max_length=500, blank=True)
-    icon = models.ImageField(verbose_name='Иконка', upload_to='icons', blank=True, null=True)
+    icon = models.ImageField(verbose_name='Иконка', upload_to='main/icons/', blank=True, null=True)
 
     class Meta:
         managed = True
