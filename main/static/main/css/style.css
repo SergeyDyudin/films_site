@@ -173,7 +173,7 @@ main{
 
 .text{
     margin-left: 1em;
-    margin-top: 1em;
+/*    margin-top: 1em;*/
     display: block;
 }
 
