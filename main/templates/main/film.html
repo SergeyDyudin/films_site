@@ -5,14 +5,32 @@
 {% endblock %}
 
 {% block body%}
-    {{ film_data.id_genres }}
-    {% if film_data.id_type.season %}
-        <a href="https://www.kinopoisk.ru/serial/{{ film_data.kinopoisk_id }}/" target="_blank">{{ film_data.name }}</a>
-    {% else %}
-        <a href="https://www.kinopoisk.ru/film/{{ film_data.kinopoisk_id }}/" target="_blank">{{ film_data.name }}</a>
-    {% endif %}
-    <p>{{ film_data.description }}</p>
-<!--    <p>{% lorem 2 p%}-->
-        {% now "jS F Y"%}
+<div class="film_container" xmlns="http://www.w3.org/1999/html">
+        <div>
+            {% if film_data.id_type.season %}
+                <a class="f_name" href="https://www.kinopoisk.ru/serial/{{ film_data.kinopoisk_id }}/" target="_blank">{{ film_data.name }}</a>
+            {% else %}
+                <a class="f_name" href="https://www.kinopoisk.ru/film/{{ film_data.kinopoisk_id }}/" target="_blank">{{ film_data.name }}</a>
+            {% endif %}
+
+            {% if film_data.id_type.season %}
+                <a class="kinopoisk_link" href="https://www.kinopoisk.ru/serial/{{ film_data.kinopoisk_id }}/" target="_blank">Кинопоиск</a>
+            {% else %}
+                <a class="kinopoisk_link" href="https://www.kinopoisk.ru/film/{{ film_data.kinopoisk_id }}/" target="_blank">Кинопоиск</a>
+            {% endif %}
+        </div>
+        <div class="descr">
+            <p>Жанр: {{ film_data.id_genres }}</p>
+            <p>Длительность: {{ film_data.time }}</p>
+            <p>Год выхода: {{ film_data.id_years }}</p>
+        </div>
+        <p>{{ film_data.description }}</p>
+    <!--    <p>{% lorem 2 p%}-->
+        <div class="film_rating">
+            Рейтинг Кинопоиска: <span class="rating">{{ film_data.kinopoisk }}</span>
+            Рейтинг IMDB: <span class="rating">{{ film_data.imdb }}</span>
+        </div>
+<!--            {% now "jS F Y"%}-->
+    </div>
 {% endblock %}
 
