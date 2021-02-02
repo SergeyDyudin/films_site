@@ -124,6 +124,7 @@ main{
 /* Page Films.html */
 /* Grid output for films */
 .grid_container{
+    margin: 1em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2em;
@@ -298,7 +299,19 @@ form label{
     display: block;
 }
 
+/* Page record.html */
+.record_page{
+    display: flex;
+    justify-content: center;
+}
 
+.record_page video{
+    margin: 0 auto;
+}
+
+.yellow_text{
+    color: #f0b33e;
+}
 
 
 
