@@ -1,4 +1,9 @@
 {% extends 'main/layout.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'records/css/records.css' %}">
+{% endblock %}
 
 {% block title%}
 List of records
