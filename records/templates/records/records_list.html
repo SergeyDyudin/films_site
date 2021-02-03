@@ -5,17 +5,18 @@ List of records
 {% endblock %}
 
 {% block body %}
-    <div class="grid_container">
+    <div class="records-grid-container">
         {% if page_obj %}
             {% for record in page_obj %}
-                <a class="films_elem" href="{% url 'record' record.id%}">
+                <a class="films_elem container" href="{% url 'record' record.id%}">
                     <div class="yellow_text text">
                         {{ record.date }}
                     </div>
                     <div class="text">
                         {{ record.name }}
                     </div>
-                    <video src="{{ record.video.url }}" width="320" height="240" ></video>
+                    <video src="{{ record.video.url }}" width="320" height="240"></video>
+<!--                    <input class="films-elem_btn" type="button" value="PLAY"></input>-->
                 </a>
             {% endfor %}
         {% else %}

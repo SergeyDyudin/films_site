@@ -6,7 +6,7 @@ from .models import Records
 
 @login_required
 def records_list(request):
-    rec_list = Records.objects.all().order_by('date')
+    rec_list = Records.objects.all().order_by('-date')
     paginator = Paginator(rec_list, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
