@@ -16,9 +16,11 @@ from .models import Films
 def home(request):
     return render(request, 'main/index.html')
 
+
 @login_required
 def about(request):
     return render(request, 'main/about.html')
+
 
 @login_required
 def contacts(request):
@@ -48,10 +50,12 @@ def sign_in(request):
             form = LoginForm(initial={'username': '', 'password': ''})
         return render(request, 'main/sign_in.html')
 
+
 @login_required
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse('sign-in'))
+
 
 @login_required
 def films(request):
@@ -66,6 +70,7 @@ def films(request):
     page_obj = paginator.get_page(page_number)
     return render(request, 'main/films.html', {'page_obj': page_obj})
     # return render(request, 'main/films.html', {'films_list': films_list})
+
 
 @login_required
 def film(request, film_id):

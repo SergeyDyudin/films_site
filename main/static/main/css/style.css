@@ -124,6 +124,7 @@ main{
 /* Page Films.html */
 /* Grid output for films */
 .grid_container{
+    margin: 1em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2em;
@@ -230,7 +231,7 @@ a.f_name:visited{
     font-size: 25px;
     text-transform: uppercase;
     color: #f0f8ff;
-    background-color: f0b33e;
+    background-color: #f0b33e;
 
     border: 3px solid transparent;
     border-radius: .25rem;
@@ -298,23 +299,8 @@ form label{
     display: block;
 }
 
-/* Search.html*/
-.search-form {
-    margin-bottom: 1em;
-    margin-left: 10em;
-}
-
-.search-form_input{
-    height: 3em;
-    border: 3px solid #333030;
-    border-radius: .25rem;
-
-    box-shadow: 5px 5px 8px #191919;
-    /*box-shadow: 10px 10px 5px #191919;*/
-}
-
-.search-form_input:hover{
-    box-shadow: 5px 5px 4px #191919;
+.yellow_text{
+    color: #f0b33e;
 }
 
 .search-form_button{

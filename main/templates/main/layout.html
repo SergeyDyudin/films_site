@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/paginator.css' %}">
-{#    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">#}
+    {% block style %} {% endblock %}
     <title>{% block title%}{% endblock %}</title>
 </head>
 <body>
     <header>
         <a class="site_title" href="/">VideoArchive</a>
         <nav class="navigation">
-            <a  href="/">Главная</a>
+            <a  href="{% url 'records-list' %}">Видеозаписи</a>
             <a  href="{% url 'films' %}">Films</a>
             <a  href="https://www.apgyugrusi.ru/ref/Телефоны.xls">Справочник</a>
             <a  href="{% url 'contacts' %}">Contacts</a>
