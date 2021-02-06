@@ -3,6 +3,7 @@
 
 {% block style %}
 <link rel="stylesheet" href="{% static 'records/css/records.css' %}">
+<link rel="stylesheet" href="{% static 'records/css/records_search.css' %}">
 {% endblock %}
 
 {% block title%}
@@ -10,6 +11,7 @@ List of records
 {% endblock %}
 
 {% block body %}
+    {% include 'records/search_records.html' %}
     <div class="records-grid-container">
         {% if page_obj %}
             {% for record in page_obj %}
