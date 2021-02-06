@@ -5,6 +5,7 @@ List of films
 {% endblock %}
 
 {% block body%}
+    {% include 'main/search.html' %}
     <div class="grid_container">
         {% if page_obj %}
             {% for film in page_obj %}

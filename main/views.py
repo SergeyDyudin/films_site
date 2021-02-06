@@ -56,6 +56,11 @@ def logout_user(request):
 @login_required
 def films(request):
     films_list = Films.objects.all().order_by('id')
+
+    film_name = request.GET.get('film_name')
+    if film_name:
+        films_list = films_list.filter(name__icontains=film_name)
+
     paginator = Paginator(films_list, 28)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

@@ -298,10 +298,51 @@ form label{
     display: block;
 }
 
+/* Search.html*/
+.search-form {
+    margin-bottom: 1em;
+    margin-left: 10em;
+}
 
+.search-form_input{
+    height: 3em;
+    border: 3px solid #333030;
+    border-radius: .25rem;
 
+    box-shadow: 5px 5px 8px #191919;
+    /*box-shadow: 10px 10px 5px #191919;*/
+}
 
+.search-form_input:hover{
+    box-shadow: 5px 5px 4px #191919;
+}
 
+.search-form_button{
+
+    margin-left: 3em;
+    height: 3em;
+    width: 10em;
+    background: #f0b33e;
+    border: 3px solid transparent;
+    border-radius: .25rem;
+    border-color: #f0b33e;
+    padding: .375rem .75rem;
+
+    transition: border-color 0.3s linear;
+
+    box-shadow: 5px 5px 7px #191919;
+}
+
+.search-form_button:hover{
+    font-weight: bold;
+    box-shadow: 5px 5px 4px #191919;
+}
+
+.search-form:active{
+    border-color: #f0b33e;
+    /*font-weight: bold;*/
+    /*box-shadow: 5px 5px 4px #191919;*/
+}
 
 
 
