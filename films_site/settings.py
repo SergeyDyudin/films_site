@@ -86,23 +86,13 @@ WSGI_APPLICATION = 'films_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_test',
-        'USER': 'zs-content-02-usr',
-        'PASSWORD': 'Qw78945',
-        'HOST': '127.0.0.1',
+        'NAME': os.getenv('FILMS_BASE'),
+        'USER': os.getenv('BASE_USER'),
+        'PASSWORD': os.getenv('BASE_PASS'),
+        'HOST': os.getenv('BASE_HOST'),
         'PORT': '5432',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('FILMS_BASE'),
-#         'USER': os.getenv('BASE_USER'),
-#         'PASSWORD': os.getenv('BASE_PASS'),
-#         'HOST': os.getenv('BASE_HOST'),
-#         'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
