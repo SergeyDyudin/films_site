@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'videoarchive.yugrusi.ru',
+                 'locahost',
+                 '172.16.14.166',
+                 ]
 
 
 # Application definition
@@ -82,13 +86,23 @@ WSGI_APPLICATION = 'films_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('FILMS_BASE'),
-        'USER': os.getenv('BASE_USER'),
-        'PASSWORD': os.getenv('BASE_PASS'),
-        'HOST': os.getenv('BASE_HOST'),
+        'NAME': 'db_test',
+        'USER': 'zs-content-02-usr',
+        'PASSWORD': 'Qw78945',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('FILMS_BASE'),
+#         'USER': os.getenv('BASE_USER'),
+#         'PASSWORD': os.getenv('BASE_PASS'),
+#         'HOST': os.getenv('BASE_HOST'),
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -131,10 +145,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 
 LOGIN_URL = 'sign-in'
 
