@@ -6,5 +6,5 @@ venv
 __pycache__
 media/records
 media/main
-static
-media
+static/admin
+.env
