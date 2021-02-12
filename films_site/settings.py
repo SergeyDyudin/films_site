@@ -29,6 +29,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'videoarchive.yugrusi.ru',
+                 'videoarchive.main.ru',
+                 'videoarchive.main.yugrusi.ru',
                  'locahost',
                  '172.16.14.166',
                  ]

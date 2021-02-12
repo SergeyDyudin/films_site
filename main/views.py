@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -14,7 +14,8 @@ from .models import Films
 
 @login_required
 def home(request):
-    return render(request, 'main/index.html')
+    # return render(request, 'main/index.html')
+    return HttpResponseRedirect(reverse('records-list', current_app='records'))
 
 
 @login_required
