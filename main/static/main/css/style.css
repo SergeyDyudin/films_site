@@ -237,6 +237,8 @@ a.f_name:visited{
     border-radius: .25rem;
     border-color: #f0b33e;
     padding: .375rem .75rem;
+
+    box-shadow: 5px 5px 8px #191919;
 }
 
 .film_rating{
@@ -330,7 +332,11 @@ form label{
     /*box-shadow: 5px 5px 4px #191919;*/
 }
 
-
+.record-elem{
+    width: 70%;
+    display: block;
+    margin: auto;
+}
 
 
 

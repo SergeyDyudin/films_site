@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'videoarchive.yugrusi.ru',
@@ -141,9 +141,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = [
-    "static/css",
+    "/var/ww/films_site/static/css",
+    os.path.join(BASE_DIR, 'static/css'),
 ]
-
+# STATICFILES_FINDERS = (
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
 LOGIN_URL = 'sign-in'
 
 SESSION_COOKIE_AGE = 3600
