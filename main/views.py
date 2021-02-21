@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -39,7 +39,7 @@ def sign_in(request):
                 password = form.cleaned_data['password']
                 user = authenticate(request, username=username, password=password)
 
-                if user is not None:
+                if user is not None and user.is_active:
                     login(request, user)
                     # return HttpResponseRedirect(reverse('home'))
                     redirect_to = request.GET.get('next', '/')
@@ -59,6 +59,7 @@ def logout_user(request):
 
 
 @login_required
+@permission_required(perm='main.view_films', raise_exception=True)
 def films(request):
     films_list = Films.objects.all().order_by('id')
 
@@ -74,6 +75,7 @@ def films(request):
 
 
 @login_required
+@permission_required(perm='main.view_films', raise_exception=True)
 def film(request, film_id):
     film_data = get_object_or_404(Films, id=film_id)
     # film_data = model_to_dict(film_data)
