@@ -145,6 +145,7 @@ main{
     position: relative;
 
     box-shadow: 10px 10px 5px #191919;
+    border-radius: 2em;
 }
 
 .grid_container > a.films_elem:hover{
