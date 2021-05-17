@@ -145,7 +145,7 @@ main{
     position: relative;
 
     box-shadow: 10px 10px 5px #191919;
-    border-radius: 2em;
+    border-radius: 1em;
 }
 
 .grid_container > a.films_elem:hover{
@@ -166,9 +166,9 @@ main{
     
 }
 
-.grid_container > a.films_elem:hover:after{
+/**.grid_container > a.films_elem:hover:after{
     opacity: 1;
-}
+}**/
 
 .film{
     display: flex;
